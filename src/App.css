@@ -1,0 +1,91 @@
+* {
+  text-decoration: none;
+}
+
+.App {
+  overflow-x: hidden;
+}
+
+.movieWindow {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  min-height: 100%;
+}
+
+.movie {
+  width: 950px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  height: 96%;
+  bottom: -96%;
+
+  transition: 0.2s;
+  overflow: scroll;
+  background-color: rgb(26, 26, 26);
+  position: fixed;
+  z-index: 3;
+}
+
+.bottomNav {
+  position: fixed;
+  bottom: 0px;
+  background-color: #000;
+  width: 100%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  height: 70px;
+  justify-content: space-around;
+}
+
+.bottomNav div {
+  display: flex;
+  width: 64px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bottomNav div svg {
+  width: 27px;
+  height: 27px;
+  margin-bottom: 4px;
+}
+
+.movie::-webkit-scrollbar {
+  display: none;
+}
+
+.movie.active {
+  bottom: 0%;
+}
+
+.backShadow {
+  background-color: rgba(0, 0, 0, 0.543);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.4s;
+  z-index: 3;
+  top: 0;
+}
+
+.backShadow.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media (min-width: 700px) {
+  .bottomNav {
+    display: none;
+  }
+}
+
+@media (max-width: 950px) {
+  .movieWindow .movie {
+    width: 100%;
+    overflow: auto;
+  }
+}

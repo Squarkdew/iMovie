@@ -1,0 +1,96 @@
+.playerSection {
+  .player {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+
+    #xBtn {
+      z-index: 6;
+      position: absolute;
+      left: 30px;
+      top: 30px;
+      padding: 10px 13.5px;
+      border-radius: 50%;
+      font-size: 28px;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.2s;
+      &:hover {
+        background-color: #181818d1;
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+    video {
+      width: 100%;
+      height: 100vh;
+    }
+    .continueContainer {
+      position: fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      min-height: 100vh;
+      z-index: 5;
+    }
+    .continue {
+      background-color: hsla(0, 0%, 100%, 0.134);
+      color: #fff;
+      padding: 25px;
+      border-radius: 5px;
+      display: flex;
+      gap: 30px;
+      flex-direction: column;
+      .pngTitle {
+        width: 360px;
+      }
+      .progres {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        .progresBar {
+          width: 170px;
+          position: relative;
+          height: 5px;
+          background-color: hsla(0, 0%, 100%, 0.534);
+          .bar {
+            height: 100%;
+            background-color: #fff;
+          }
+        }
+      }
+      .btns {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        div {
+          border-radius: 3px;
+          background-color: #2e2e2e;
+          padding: 10px 20px;
+          color: #fff;
+          transition: 0.2s;
+          cursor: pointer;
+          &:hover {
+            background-color: #414141;
+          }
+        }
+      }
+    }
+  }
+  .show {
+    visibility: visible;
+    opacity: 1;
+    transition: 0.6s;
+  }
+
+  .hide {
+    visibility: hidden;
+    opacity: 0;
+  }
+}

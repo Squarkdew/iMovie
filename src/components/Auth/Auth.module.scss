@@ -1,0 +1,106 @@
+.main {
+  background-image: url("../../../public/images/authImg.jpeg");
+  background-color: rgba(0, 0, 0, 0.7);
+  background-blend-mode: multiply;
+  width: 100%;
+  color: #fff;
+  z-index: 1000;
+  position: absolute;
+  min-height: 100vh;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .authSection {
+    background-color: #131317;
+    border-radius: 20px;
+    // transition: 0.15s;
+
+    padding: 32px;
+    color: #dfdfdf;
+
+    .header {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin-bottom: 20px;
+
+      div {
+        display: flex;
+        align-items: center;
+        font-size: 22px;
+        font-weight: 500;
+
+        .idIcon {
+          width: 26px;
+          margin-left: 5px;
+        }
+      }
+    }
+
+    .container {
+      width: 312px;
+
+      .containerHeader {
+        h1 {
+          display: flex;
+          justify-content: center;
+          font-weight: 500;
+          font-size: 20px;
+          color: rgba(247, 247, 255, 0.9);
+          span {
+            text-align: center;
+            width: 190px;
+          }
+        }
+      }
+
+      .authWrapper {
+        width: 306px;
+        height: 50px;
+        border: 1px solid rgba(211, 211, 222, 0.2);
+        border-radius: 20px;
+        margin-top: 24px;
+        padding: 2px;
+        display: flex;
+
+        .login {
+          width: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          border-radius: 17px;
+          margin-right: 2px;
+          transition: 0.2s;
+        }
+
+        .signUp {
+          width: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          transition: 0.2s;
+          border-radius: 17px;
+        }
+      }
+
+      .logBtn {
+        margin-top: 24px;
+        button {
+          height: 56px;
+          cursor: pointer;
+          width: 100%;
+          font-size: 16px;
+          font-weight: 500;
+          color: #1f1f24;
+          border: none;
+          border-radius: 20px;
+        }
+      }
+    }
+  }
+}

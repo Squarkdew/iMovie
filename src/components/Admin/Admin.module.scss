@@ -1,0 +1,30 @@
+.main {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fff;
+  display: flex;
+
+  .sidebar {
+    position: fixed;
+    border-right: 1px solid #b4b4b4;
+    width: 300px;
+    display: flex;
+    background-color: #fff;
+    min-height: 100vh;
+    z-index: 10;
+    flex-direction: column;
+    .link {
+      color: #000;
+      text-decoration: none;
+      padding: 20px;
+      &:hover {
+        background-color: #b4b4b4;
+      }
+    }
+  }
+  .content {
+    margin-left: 300px;
+    width: 100%;
+    padding: 50px 0px;
+  }
+}

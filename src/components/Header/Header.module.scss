@@ -1,0 +1,394 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto";
+}
+
+.fa-solid.fa-user {
+  color: #000;
+}
+
+.header {
+  display: flex;
+  background-color: #000;
+  color: #fff;
+  align-items: center;
+  height: 70px;
+  padding: 0px 60px;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 3;
+
+  .icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    i {
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    .userIcon {
+      cursor: pointer;
+      width: 46px;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      border-radius: 50%;
+      justify-content: center;
+      height: 46px;
+      background-color: hsla(0, 0%, 100%, 0.1);
+    }
+
+    // .hoverContainer:hover {
+    //   .userContainer {
+    //     opacity: 1;
+    //     visibility: visible;
+    //   }
+    // }
+
+    .login {
+      display: flex;
+      align-items: center;
+      padding: 12px 13px;
+
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+      background-color: hsla(0, 0%, 100%, 0.1);
+      span {
+        margin-top: 2px;
+        font-weight: 500;
+      }
+
+      .userIcon {
+        margin-right: 13px;
+        width: 20px;
+        height: 20px;
+        font-size: 19px;
+        background-color: #ffffff00;
+      }
+    }
+
+    .userContainer {
+      visibility: hidden;
+
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+
+      position: absolute;
+      transition: 0.18s;
+
+      opacity: 0;
+      background-color: #141414;
+      width: 300px;
+      right: 40px;
+      top: 0;
+
+      .hoverPen {
+        position: relative;
+        border-radius: 50%;
+
+        .penIcon {
+          position: absolute;
+          bottom: -2px;
+          right: -2px;
+          background-color: #fff;
+          color: #000;
+          border-radius: 50%;
+          padding: 3px;
+          visibility: hidden;
+          opacity: 0;
+          transition: 0.1s;
+          font-size: 12px;
+          cursor: pointer;
+        }
+
+        &:hover {
+          .penIcon {
+            visibility: visible;
+            opacity: 1;
+          }
+          i {
+            background-color: hsla(0, 0%, 100%, 0.07);
+            color: #ffffffc6;
+          }
+        }
+      }
+      .user {
+        padding: 0px 20px;
+        display: flex;
+        padding-bottom: 10px;
+        margin: 12.2px 0px 0px;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid hsla(0, 0%, 100%, 0.05);
+        i {
+          width: 46px;
+          height: 46px;
+          background-color: hsla(0, 0%, 100%, 0.1);
+          display: flex;
+          transition: 0.1s;
+          border-radius: 50%;
+          font-size: 18px;
+          justify-content: center;
+          align-items: center;
+        }
+        span {
+          font-size: 20px;
+          font-weight: 700;
+        }
+      }
+      .options {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 0px;
+
+        div {
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          font-size: 15px;
+          padding: 0 20px;
+          transition: 0.2s;
+          height: 36px;
+          &:hover {
+            background-color: rgb(33, 33, 33);
+          }
+        }
+      }
+
+      .changeLink {
+        text-decoration: none;
+        color: #fff;
+      }
+
+      .change {
+        padding: 0 20px;
+        margin: 11px 0px;
+        display: flex;
+        height: 50px;
+        transition: 0.2s;
+        align-items: center;
+        cursor: pointer;
+        &:hover {
+          background-color: rgb(33, 33, 33);
+        }
+        .changeIcon {
+          margin-right: 15px;
+          width: 36px;
+          height: 36px;
+          background-color: hsla(0, 0%, 100%, 0.1);
+          font-size: 21px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    .userContainer.active {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  .inputSection {
+    margin-right: 30px;
+
+    .inputContainer {
+      display: flex;
+      align-items: center;
+
+      i {
+        font-size: 24px;
+        color: grey;
+        transition: 0.3s;
+      }
+
+      i:hover {
+        color: #fff;
+      }
+
+      input {
+        line-height: normal;
+        font-weight: 400;
+        color: rgba(0, 0, 0, 0.9);
+        font-size: 15px;
+        padding: 9px 14px;
+        border-radius: 7px;
+        width: 272px;
+        border: none;
+        outline: none;
+        margin-right: 13px;
+      }
+
+      input::placeholder {
+        font-weight: 300;
+      }
+    }
+
+    .inputResults {
+      width: 300px;
+      border-radius: 7px;
+      max-height: 477px;
+      margin-top: 7px;
+      overflow: scroll;
+      padding: 11px 0px;
+      background-color: #fff;
+      position: absolute;
+      color: #000;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .notFound {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 102px;
+        padding: 0px 48px;
+        font-size: 15px;
+        line-height: 18px;
+        text-align: center;
+        opacity: 0.6;
+      }
+
+      .currentInputResult {
+        cursor: pointer;
+        padding: 8px 16px;
+        display: flex;
+        align-items: center;
+        transition: background-color 0.3s;
+
+        img {
+          width: 36px;
+        }
+        .currentResultInfo {
+          margin-left: 10px;
+
+          display: flex;
+          flex-direction: column;
+          p {
+            font-weight: 500;
+            font-size: 15px;
+          }
+
+          div {
+            display: flex;
+            margin-top: 5px;
+            font-size: 13.5px;
+            .rating {
+              font-weight: 600;
+              margin-right: 7px;
+            }
+
+            .rating.highRating {
+              color: #3bb33b;
+            }
+            .rating.mediumRating {
+              color: #777777;
+            }
+            .rating.lowRating {
+              color: #ff0000;
+            }
+
+            span:nth-child(2) {
+              font-weight: 400;
+              color: rgba(0, 0, 0, 0.556);
+            }
+          }
+        }
+        &:hover {
+          background-color: rgb(229, 229, 229);
+        }
+      }
+    }
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  ul {
+    display: flex;
+    margin-left: 50px;
+
+    li {
+      list-style: none;
+      margin-right: 15px;
+      cursor: pointer;
+
+      a {
+        text-decoration: none;
+        color: #b5b5b5;
+        transition: 0.4s;
+        height: 30px;
+        padding: 7px 4px;
+
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.adminIcon {
+  width: 46px;
+  height: 46px;
+  background-color: hsla(0, 0%, 100%, 0.1);
+  display: flex;
+  border-radius: 50%;
+  margin-right: 10px;
+  font-size: 18px;
+  justify-content: center;
+  align-items: center;
+  svg {
+    color: #fff;
+  }
+  a {
+    height: 18px;
+  }
+}
+
+@media (max-width: 700px) {
+  .inputSection {
+    position: absolute;
+    width: 65%;
+    left: 20px;
+    margin-right: 0 !important;
+    .inputContainer {
+      display: flex;
+      flex-direction: row-reverse;
+      input {
+        margin-right: 0 !important;
+        margin-left: 10px !important;
+        width: 100% !important;
+      }
+    }
+    .inputResults {
+      width: 90% !important;
+      margin-left: 27px !important;
+    }
+  }
+  .header {
+    justify-content: end;
+    padding: 0 20px !important;
+  }
+  .nav {
+    display: none !important;
+  }
+  .userContainer {
+    right: 0 !important;
+  }
+}

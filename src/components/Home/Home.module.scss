@@ -1,0 +1,370 @@
+.img {
+  width: 295px;
+}
+
+.main {
+  background-color: #000;
+  min-height: 100vh;
+  padding-top: 70px;
+
+  color: #fff;
+  padding-bottom: 30px;
+  .randomMovie {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
+    .randomImg {
+      height: 80vh;
+      background-position: 100% 0;
+      background-repeat: no-repeat;
+      background-size: contain;
+      inset-inline-end: 0;
+    }
+
+    .shadow {
+      position: absolute;
+      inset-block-start: 0;
+      inset-inline-start: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      justify-content: space-between;
+      background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.999) 0%,
+        rgba(0, 0, 0, 0.992) 30%,
+        rgba(0, 0, 0, 0.965) 33%,
+        rgba(0, 0, 0, 0.918) 36%,
+        rgba(0, 0, 0, 0.85) 39%,
+        rgba(0, 0, 0, 0.77) 42%,
+        rgba(0, 0, 0, 0.667) 45%,
+        rgba(0, 0, 0, 0.557) 48%,
+        rgba(0, 0, 0, 0.443) 51%,
+        rgba(0, 0, 0, 0.333) 54%,
+        rgba(0, 0, 0, 0.23) 57%,
+        rgba(0, 0, 0, 0.15) 60%,
+        rgba(0, 0, 0, 0.082) 63%,
+        rgba(0, 0, 0, 0.035) 66%,
+        rgba(0, 0, 0, 0.008) 69%,
+        rgba(0, 0, 0, 0) 70%
+      );
+
+      &::before {
+        width: 100%;
+        height: 14.4rem;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        top: 0;
+        content: "";
+        pointer-events: none;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.4),
+          rgba(0, 0, 0, 0.397) 6.67%,
+          rgba(0, 0, 0, 0.386) 13.33%,
+          rgba(0, 0, 0, 0.367) 20%,
+          rgba(0, 0, 0, 0.341) 26.67%,
+          rgba(0, 0, 0, 0.307) 33.33%,
+          rgba(0, 0, 0, 0.267) 40%,
+          rgba(0, 0, 0, 0.223) 46.67%,
+          rgba(0, 0, 0, 0.177) 53.33%,
+          rgba(0, 0, 0, 0.133) 60%,
+          rgba(0, 0, 0, 0.093) 66.67%,
+          rgba(0, 0, 0, 0.059) 73.33%,
+          rgba(0, 0, 0, 0.033) 80%,
+          rgba(0, 0, 0, 0.014) 86.67%,
+          rgba(0, 0, 0, 0.003) 93.33%,
+          rgba(0, 0, 0, 0.00004)
+        );
+      }
+      .content {
+        position: absolute;
+        max-width: 600px;
+        padding: 0px 60px;
+
+        .movieBtns {
+          display: flex;
+          margin-top: 30px;
+          align-items: center;
+          color: #000;
+
+          #favorites {
+            font-size: 22px;
+            margin-left: 12px;
+            padding: 15px 17.75px;
+            background-color: #fff;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.2s ease;
+
+            &:hover {
+              transform: scale(1.05);
+            }
+          }
+
+          .play {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+
+            padding: 14.25px 25px;
+            border-radius: 3px;
+            transition: 0.3s;
+
+            cursor: pointer;
+            h2 {
+              font-size: 1.2rem;
+            }
+            .playBtn {
+              font-size: 28px;
+              margin-right: 8px;
+            }
+            transition: 0.2s ease;
+
+            &:hover {
+              transform: scale(1.05);
+            }
+          }
+        }
+
+        .about {
+          display: flex;
+          align-items: center;
+          margin-left: 4px;
+          .info {
+            transition: 0.3s;
+            color: #fff;
+            width: 64px;
+            height: 64px;
+            cursor: pointer;
+            &:hover {
+              transform: scale(1.05);
+            }
+          }
+        }
+
+        .pngTitle {
+          width: 520px;
+        }
+
+        .miniInfo {
+          display: flex;
+          color: #fff;
+          margin-top: 15px;
+          margin-bottom: 10px;
+          .rating {
+            margin-right: 10px;
+            font-size: 16px;
+            font-weight: 600;
+          }
+
+          .rating.active {
+            background-image: linear-gradient(160deg, #eacc7f 16%, #ad9c72 64%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+          .rating.highRating {
+            color: #3bb33b;
+          }
+          .rating.mediumRating {
+            color: #777777;
+          }
+          .rating.lowRating {
+            color: #ff0000;
+          }
+          ul {
+            display: flex;
+            list-style: none;
+            li:nth-child(1) {
+              margin-right: 4px;
+              color: #ffffff99;
+            }
+            li {
+              margin-right: 13px;
+              color: #ffffff99;
+              font-weight: 300;
+            }
+          }
+        }
+        .miniSummary {
+          color: #fff;
+          margin-right: 30px;
+          line-height: 40px;
+          font-size: 24px;
+
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}
+
+.lines {
+  ul {
+    display: flex;
+    overflow: scroll;
+    padding: 18px 60px 18px 47px;
+
+    li {
+      margin-left: 13px;
+      list-style: none;
+      transition: 0.2s;
+      z-index: 0;
+      cursor: pointer;
+    }
+    li:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4.5px 118px #000, 0 27px 251px #000;
+      z-index: 1;
+    }
+  }
+  ul::-webkit-scrollbar {
+    display: none;
+  }
+  h2 {
+    padding: 24px 60px 0px;
+  }
+}
+
+@media (max-width: 700px) {
+  .randomMovie {
+    height: 10% !important;
+  }
+
+  .randomImg {
+    height: 70vh !important;
+  }
+  .shadow {
+    height: 45vh !important;
+    justify-content: center !important;
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.999) 0%,
+      rgba(0, 0, 0, 0.992) 30%,
+      rgba(0, 0, 0, 0.965) 33%,
+      rgba(0, 0, 0, 0.918) 36%,
+      rgba(0, 0, 0, 0.85) 39%,
+      rgba(0, 0, 0, 0.77) 42%,
+      rgba(0, 0, 0, 0.667) 45%,
+      rgba(0, 0, 0, 0.557) 48%,
+      rgba(0, 0, 0, 0.443) 51%,
+      rgba(0, 0, 0, 0.333) 54%,
+      rgba(0, 0, 0, 0.23) 57%,
+      rgba(0, 0, 0, 0.15) 60%,
+      rgba(0, 0, 0, 0.082) 63%,
+      rgba(0, 0, 0, 0.035) 66%,
+      rgba(0, 0, 0, 0.008) 69%,
+      rgba(0, 0, 0, 0) 70%
+    ) !important;
+
+    .content {
+      height: 30vh !important;
+      margin-top: 500px;
+      width: 100%;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .pngTitle {
+        width: 300px !important;
+      }
+      .miniInfo {
+        justify-content: center;
+        font-size: 15px;
+        .ul {
+          display: flex;
+          flex-direction: column !important;
+        }
+        .age {
+          margin-right: 0px !important;
+        }
+      }
+      .miniSummary {
+        padding: 0 10px !important;
+        font-size: 24px !important;
+        text-align: center;
+        margin-right: 0 !important;
+      }
+    }
+    .adapt {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .randomMovie {
+    height: 10% !important;
+  }
+
+  .randomImg {
+    height: 70vh !important;
+  }
+  .shadow {
+    height: 30vh !important;
+    justify-content: center !important;
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.999) 0%,
+      rgba(0, 0, 0, 0.992) 30%,
+      rgba(0, 0, 0, 0.965) 33%,
+      rgba(0, 0, 0, 0.918) 36%,
+      rgba(0, 0, 0, 0.85) 39%,
+      rgba(0, 0, 0, 0.77) 42%,
+      rgba(0, 0, 0, 0.667) 45%,
+      rgba(0, 0, 0, 0.557) 48%,
+      rgba(0, 0, 0, 0.443) 51%,
+      rgba(0, 0, 0, 0.333) 54%,
+      rgba(0, 0, 0, 0.23) 57%,
+      rgba(0, 0, 0, 0.15) 60%,
+      rgba(0, 0, 0, 0.082) 63%,
+      rgba(0, 0, 0, 0.035) 66%,
+      rgba(0, 0, 0, 0.008) 69%,
+      rgba(0, 0, 0, 0) 70%
+    ) !important;
+
+    .content {
+      height: 30vh !important;
+      margin-top: 500px;
+      width: 100%;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .pngTitle {
+        width: 300px !important;
+      }
+      .miniInfo {
+        justify-content: center;
+        font-size: 15px;
+        .ul {
+          display: flex;
+          flex-direction: column !important;
+        }
+        .age {
+          margin-right: 0px !important;
+        }
+      }
+      .miniSummary {
+        padding: 0 10px !important;
+        font-size: 24px !important;
+        text-align: center;
+        margin-right: 0 !important;
+      }
+    }
+    .adapt {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

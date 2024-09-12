@@ -1,0 +1,327 @@
+.main {
+  color: #fff;
+  padding-bottom: 30px;
+  .stickyHeader {
+    position: fixed;
+    transition: 0.15s;
+
+    display: flex;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    justify-content: space-between;
+    align-items: center;
+    width: 950px;
+    z-index: 10;
+    overflow: hidden;
+    .back {
+      font-size: 26px;
+      margin-left: 20px;
+      cursor: pointer;
+    }
+
+    .headerLeft {
+      display: flex;
+      align-items: center;
+    }
+    .showTitle {
+      transition: 0.2s;
+      position: relative;
+      line-height: 0px;
+
+      .showName {
+        max-height: 30px;
+
+        position: relative;
+        bottom: -10px;
+        cursor: pointer;
+        margin-left: 20px;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.15s;
+      }
+
+      .showName.active {
+        visibility: visible;
+        bottom: 0px;
+        opacity: 1;
+        cursor: pointer;
+      }
+    }
+  }
+
+  #xBtn {
+    color: #fff;
+    background-color: rgb(52, 52, 52);
+
+    float: right;
+    padding: 5px 7.5px;
+    margin: 15px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .actor {
+    display: flex;
+    padding: 80px 30px 0px;
+    flex-direction: column;
+
+    .oscar {
+      position: relative;
+      height: 120px;
+      span {
+        position: absolute;
+        right: 8px;
+        bottom: 2px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        font-weight: 600;
+        color: #000000;
+        border: 3px solid #fff;
+        border-radius: 50%;
+        background-color: #ffffff;
+      }
+      img {
+        width: 120px;
+      }
+    }
+    .mainInfo {
+      display: flex;
+    }
+    .actorImg {
+      margin-right: 30px;
+      img {
+        height: 333px;
+      }
+    }
+    .actorInfo {
+      .actorName {
+        .favoriteBtn {
+          margin-top: 32px;
+          display: flex;
+          font-size: 16px;
+          align-items: center;
+          font-weight: 600;
+          width: 163px;
+          padding: 14px 26px;
+          border-radius: 40px;
+          background-color: #ffffff;
+          color: #000;
+          justify-content: center;
+          cursor: pointer;
+          transition: 0.2s;
+          &:hover {
+            transform: scale(1.05);
+          }
+          .like {
+            height: 24px;
+            width: 24px;
+            margin-right: 10px;
+          }
+        }
+        .engName {
+          font-size: 18px;
+          margin-top: 8px;
+          font-weight: 300;
+          font-size: 18px;
+          color: #adadad;
+        }
+      }
+      .about {
+        display: flex;
+        margin-top: 50px;
+        .bestMovies {
+          margin-top: 47px;
+          margin-left: 40px;
+          h2 {
+            font-size: 15.5px;
+            margin-bottom: 14px;
+          }
+          .bestMovie {
+            cursor: pointer;
+            list-style: none;
+            margin-bottom: 8px;
+            font-size: 13px;
+            font-weight: 300;
+            line-height: 15px;
+            transition: 0.2s;
+            color: #c2c2c2;
+            &:hover {
+              color: #fff;
+            }
+          }
+        }
+        .aboutPerson {
+          letter-spacing: 0.5px;
+          font-weight: 600;
+          margin-bottom: 9px;
+        }
+
+        .table {
+          display: flex;
+          flex-direction: column;
+          .tableLine {
+            display: flex;
+            padding: 10px 0px;
+            .lineTitle {
+              width: 150px;
+              color: #c5c5c5e6;
+              font-size: 14px;
+            }
+
+            .lineValue {
+              width: 260px;
+              font-size: 14px;
+              display: flex;
+              span {
+                color: #c5c5c5e6;
+                margin-left: 4px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .movies {
+      h2 {
+        margin-bottom: 16px;
+        font-size: 22px;
+        margin-top: 30px;
+      }
+      .moviesSlider {
+        overflow: scroll;
+        display: flex;
+        .movie {
+          margin-right: 8px;
+          width: 150px;
+          .searchPoster {
+            width: 150px;
+          }
+          .movieInfo {
+            display: flex;
+            flex-direction: column;
+            margin-top: 4px;
+            width: 150px;
+            .title {
+              font-size: 15px;
+              margin-bottom: 4.5px;
+              font-weight: 500;
+              line-height: 18px;
+              white-space: normal;
+              word-break: break-word;
+            }
+
+            .info {
+              font-size: 13px;
+              color: #c5c5c5e6;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 950px) {
+  .stickyHeader {
+    width: 100% !important;
+    margin-top: -1px;
+    .showTitle {
+      position: relative;
+      width: 100%;
+      .showImg {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+  .bestMovies {
+    display: none;
+  }
+}
+@media (max-width: 750px) {
+  .actorImg {
+    img {
+      height: 280px !important;
+    }
+  }
+
+  .personName {
+    font-size: 30px;
+  }
+}
+@media (max-width: 700px) {
+  .actorImg {
+    img {
+      height: 250px !important;
+    }
+  }
+  .lineValue {
+    width: 200px !important;
+  }
+
+  .personName {
+    font-size: 30px;
+  }
+}
+@media (max-width: 650px) {
+  .actorImg {
+    img {
+      height: 220px !important;
+    }
+  }
+  .lineValue {
+    width: 200px !important;
+  }
+
+  .personName {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 540px) {
+  .actorImg {
+    img {
+      height: 220px !important;
+    }
+  }
+
+  .adaptiveAbout {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 50px;
+  }
+  .bestMovies {
+    display: none;
+  }
+  .movies {
+    margin-top: 280px !important;
+  }
+
+  .showTitle {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .lineValue {
+    width: 200px !important;
+  }
+  .personName {
+    font-size: 30px;
+  }
+}
+@media (max-width: 480px) {
+  .titleInfo {
+    width: 180px !important;
+  }
+
+  .valueInfo {
+    width: 180px !important;
+  }
+}

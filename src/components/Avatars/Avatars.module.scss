@@ -1,0 +1,158 @@
+.avatarsContainer {
+  min-height: 100vh;
+  width: 100vw;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  .avatars {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+
+    .avatarsHeader {
+      display: flex;
+      margin: 30px 60px;
+      align-items: center;
+      justify-content: space-between;
+
+      .back {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        .backIcon {
+          font-size: 26px;
+          cursor: pointer;
+        }
+      }
+      .user {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-size: 20px;
+      }
+      i {
+        padding: 19px 20px;
+        background-color: hsla(0, 0%, 100%, 0.1);
+        transition: 0.1s;
+        border-radius: 3px;
+        font-size: 20px;
+        transition: 0.6s;
+      }
+    }
+    .slider {
+      margin-top: 30px;
+      padding: 20px 60px;
+      display: flex;
+      overflow: scroll;
+      gap: 13px;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      .avatar {
+        transition: 0.2s;
+        z-index: 0;
+        cursor: pointer;
+        &:hover {
+          z-index: 1;
+          transform: scale(1.15);
+        }
+      }
+      img {
+        width: 200px;
+        margin-bottom: 5px;
+      }
+    }
+    .reset {
+      padding: 17px 24px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      border-radius: 30px;
+      transition: 0.2s;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .confirm {
+    visibility: hidden;
+    opacity: 0;
+    display: flex;
+    transition: 0.15s;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    width: 100%;
+    z-index: 10;
+    background-color: #000;
+    .confirmContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .title {
+        font-size: 22px;
+      }
+      .changeAvatars {
+        padding: 30px 0;
+        margin: 20px 0 40px;
+        border-top: 2px solid #ffffff23;
+        border-bottom: 2px solid #ffffff23;
+
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        i {
+          display: flex;
+          height: 200px;
+          width: 200px;
+          justify-content: center;
+          align-items: center;
+          font-size: 34px;
+          background-color: hsla(0, 0%, 100%, 0.12);
+        }
+      }
+      .btns {
+        display: flex;
+        gap: 20px;
+        button {
+          padding: 8px 24px;
+          font-size: 18px;
+          font-weight: 400;
+          border: none;
+          border-radius: 2px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .confirm.active {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 540px) {
+  .avatarsHeader {
+    margin: 30px 30px !important;
+  }
+  .slider {
+    padding: 20px 30px !important;
+  }
+  .confirmImg {
+    width: 150px !important;
+  }
+  .changeTitle {
+    font-size: 24px !important;
+  }
+  .selectTitle {
+    display: none;
+  }
+}
+@media (max-width: 400px) {
+  .confirmImg {
+    width: 130px !important;
+  }
+}
