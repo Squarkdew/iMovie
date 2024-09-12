@@ -103,7 +103,7 @@ function Auth({ userIsLogin, getIsAdmin }) {
         message: "Пользователь не найден. Провертье логин или пароль",
       });
     } else {
-      localStorage.setItem("token", JSON.stringify(data.token));
+      localStorage.setItem("token", data.token);
       reset();
       userIsLogin();
     }

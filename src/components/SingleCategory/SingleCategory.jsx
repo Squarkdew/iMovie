@@ -11,7 +11,7 @@ function SingleCategory({ openMovie }) {
 
   const getCategoryMovies = async () => {
     try {
-      const token = JSON.parse(localStorage.getItem("token"));
+      const token = localStorage.getItem("token");
       const { data } = await axios.post(
         "http://localhost:3001/getMovies/categoryMovies",
         { category: category.category, token }

@@ -14,7 +14,7 @@ function SinglePerson({ closeMovie, favoritePersons, getFavoritePersons }) {
   const navigate = useNavigate();
 
   const getCurrentPerson = async () => {
-    const token = JSON.parse(localStorage.getItem("token"));
+    const token = localStorage.getItem("token");
     const { data } = await axios.post(`http://localhost:3001/getMovie/person`, {
       token,
       personId,
@@ -24,7 +24,7 @@ function SinglePerson({ closeMovie, favoritePersons, getFavoritePersons }) {
 
   const addPerson = async (id) => {
     try {
-      const token = JSON.parse(localStorage.getItem("token"));
+      const token = localStorage.getItem("token");
       if (token !== "") {
         const { data } = await axios.post("http://localhost:3001/person/add", {
           token,
@@ -39,7 +39,7 @@ function SinglePerson({ closeMovie, favoritePersons, getFavoritePersons }) {
 
   const deletePerson = async (id) => {
     try {
-      const token = JSON.parse(localStorage.getItem("token"));
+      const token = localStorage.getItem("token");
       const { data } = await axios.post("http://localhost:3001/person/delete", {
         token,
         id,
@@ -68,7 +68,7 @@ function SinglePerson({ closeMovie, favoritePersons, getFavoritePersons }) {
 
   const getPersonMovies = async () => {
     try {
-      const token = JSON.parse(localStorage.getItem("token"));
+      const token = localStorage.getItem("token");
       const { data } = await axios.post(
         "http://localhost:3001/getPersonMovies",
         {

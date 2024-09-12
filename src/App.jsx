@@ -140,7 +140,7 @@ function App() {
       });
 
       if (data === false) {
-        localStorage.setItem("token", JSON.stringify(""));
+        localStorage.setItem("token", "");
         userIsLogin();
       } else setMovies(data);
     } catch (e) {
@@ -157,7 +157,7 @@ function App() {
       });
 
       if (data === false) {
-        localStorage.setItem("token", JSON.stringify(""));
+        localStorage.setItem("token", "");
         userIsLogin();
       } else setPersons(data);
     } catch (e) {

@@ -22,7 +22,7 @@ function MoviePlayer({
   const saveMovieTime = async (time) => {
     try {
       if (!show) {
-        const token = JSON.parse(localStorage.getItem("token"));
+        const token = localStorage.getItem("token");
         if (token !== "") {
           await axios.post("http://localhost:3001/movieTime/save", {
             token,
@@ -38,7 +38,7 @@ function MoviePlayer({
 
   const getMovieTime = async () => {
     try {
-      const token = JSON.parse(localStorage.getItem("token"));
+      const token = localStorage.getItem("token");
       if (token !== "") {
         const { data } = await axios.post(
           "http://localhost:3001/movieTime/get",

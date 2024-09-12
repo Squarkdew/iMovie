@@ -85,7 +85,7 @@ function Header({
   const inputSearchs = [...startsWithText, ...includesText];
 
   const del = () => {
-    localStorage.setItem("token", JSON.stringify(""));
+    localStorage.setItem("token", "");
     document
       .querySelector(`.${cls.userContainer}`)
       .classList.remove(cls.active);
@@ -244,7 +244,7 @@ function Header({
           )}
         </div>
         <div className={cls.hoverContainer}>
-          {JSON.parse(localStorage.getItem("token")).length > 0 ? (
+          {localStorage.getItem("token").length > 0 ? (
             <div className={cls.userIcon} onClick={openInfo}>
               {userInfo && userInfo.avatar && userInfo.avatar.length > 0 ? (
                 <img

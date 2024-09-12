@@ -48,7 +48,7 @@ function MyComments({
 
   const deleteComment = async (id) => {
     try {
-      const token = JSON.parse(localStorage.getItem("token"));
+      const token = localStorage.getItem("token");
       const { data } = await axios.post(
         "http://localhost:3001/comments/delete",
         { id, token }
