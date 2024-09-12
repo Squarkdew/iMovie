@@ -56,7 +56,7 @@ function App() {
       setIsPlayerOpen(!isPlayerOpen);
       setMoviePlayer(movie);
     } else {
-      if (JSON.parse(localStorage.getItem("token")) !== "") {
+      if (localStorage.getItem("token") !== "") {
         setIsPlayerOpen(!isPlayerOpen);
         setMoviePlayer(movie);
       } else navigate("auth");
@@ -133,7 +133,7 @@ function App() {
 
   const getMovies = async () => {
     try {
-      const token = JSON.parse(localStorage.getItem("token"));
+      const token = localStorage.getItem("token");
 
       const { data } = await axios.post("http://localhost:3001/getMovies", {
         token,
@@ -150,7 +150,7 @@ function App() {
 
   const getPersons = async () => {
     try {
-      const token = JSON.parse(localStorage.getItem("token"));
+      const token = localStorage.getItem("token");
 
       const { data } = await axios.post("http://localhost:3001/getPersons", {
         token,
@@ -167,7 +167,7 @@ function App() {
 
   const handleLikeMovie = async (movie) => {
     try {
-      const token = JSON.parse(localStorage.getItem("token"));
+      const token = localStorage.getItem("token");
       if (token !== "") {
         const { data } = await axios.post(
           `http://localhost:3001/favorites/add`,
@@ -186,7 +186,7 @@ function App() {
 
   const getFavoritePersons = async () => {
     try {
-      const token = JSON.parse(localStorage.getItem("token"));
+      const token = localStorage.getItem("token");
       const { data } = await axios.post(`http://localhost:3001/person/get`, {
         token,
       });
@@ -200,7 +200,7 @@ function App() {
 
   const handleGetFavorites = async () => {
     try {
-      const token = JSON.parse(localStorage.getItem("token"));
+      const token = localStorage.getItem("token");
 
       const { data } = await axios.post(
         "http://localhost:3001/getFavoritesMovies",
@@ -221,7 +221,7 @@ function App() {
 
   const handleDislikeMovie = async (movie) => {
     try {
-      const token = JSON.parse(localStorage.getItem("token"));
+      const token = localStorage.getItem("token");
       const { data } = await axios.post(
         "http://localhost:3001/favorites/delete",
         {
@@ -237,7 +237,7 @@ function App() {
 
   const getIsAdmin = async () => {
     try {
-      const token = JSON.parse(localStorage.getItem("token"));
+      const token = localStorage.getItem("token");
       if (token.length > 0) {
         const { data } = await axios.post(
           "http://localhost:3001/admin/isAdmin",
@@ -254,7 +254,7 @@ function App() {
   };
 
   const userIsLogin = () => {
-    const token = JSON.parse(localStorage.getItem("token"));
+    const token = localStorage.getItem("token");
     if (token) {
       handleGetFavorites();
       getMovies();
@@ -273,7 +273,7 @@ function App() {
 
   const getUserComments = async () => {
     try {
-      const token = JSON.parse(localStorage.getItem("token"));
+      const token = localStorage.getItem("token");
       if (token !== "") {
         const { data } = await axios.post(
           "http://localhost:3001/getUserInfo/getUserComments",
@@ -297,7 +297,7 @@ function App() {
 
   const getUserInfo = async () => {
     try {
-      const token = JSON.parse(localStorage.getItem("token"));
+      const token = localStorage.getItem("token");
       if (token !== "") {
         const { data } = await axios.post("http://localhost:3001/getUserInfo", {
           token,
@@ -311,7 +311,7 @@ function App() {
 
   const addRating = async (rating, movieId) => {
     try {
-      const token = JSON.parse(localStorage.getItem("token"));
+      const token = localStorage.getItem("token");
       await axios.post("http://localhost:3001/rating/add", {
         token,
         movieId,
@@ -324,7 +324,7 @@ function App() {
   const removeRating = async (movieId) => {
     try {
       console.log(movieId);
-      const token = JSON.parse(localStorage.getItem("token"));
+      const token = localStorage.getItem("token");
       await axios.post("http://localhost:3001/rating/delete", {
         token,
         movieId,
