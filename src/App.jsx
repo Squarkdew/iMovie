@@ -238,7 +238,7 @@ function App() {
   const getIsAdmin = async () => {
     try {
       const token = localStorage.getItem("token");
-      if (token.length > 0) {
+      if (token) {
         const { data } = await axios.post(
           "http://localhost:3001/admin/isAdmin",
           {
